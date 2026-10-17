@@ -1,0 +1,395 @@
+
+/* ========================================
+   FC ELECTRO - DETALLE DE PRODUCTO
+======================================== */
+
+.detalle-producto-pagina {
+  min-height: 65vh;
+  padding: 35px 0 65px;
+  color: #18283b;
+  background: #f5f8fc;
+}
+
+.detalle-producto-contenedor {
+  max-width: 1200px;
+}
+
+.detalle-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  padding: 10px 0;
+  border: none;
+  color: #174a7e;
+  background: transparent;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.detalle-volver:hover {
+  color: #2687db;
+}
+
+.detalle-producto-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 42px;
+  padding: 35px;
+  border: 1px solid #e2eaf3;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 40px rgba(13, 43, 78, 0.07);
+}
+
+/* ========================================
+   IMAGEN DEL PRODUCTO
+======================================== */
+
+.detalle-producto-galeria {
+  min-width: 0;
+}
+
+.detalle-producto-imagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 390px;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid #e8edf4;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.detalle-producto-imagen img {
+  display: block;
+  width: 100%;
+  max-height: 460px;
+  object-fit: contain;
+}
+
+.detalle-etiqueta-oferta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 17px;
+  padding: 9px 13px;
+  border-radius: 8px;
+  color: #b91c1c;
+  background: #fee2e2;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+/* ========================================
+   INFORMACIÓN
+======================================== */
+
+.detalle-producto-informacion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 8px 0;
+}
+
+.detalle-categoria {
+  margin-bottom: 12px;
+  color: #2878b9;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.detalle-producto-informacion h1 {
+  margin: 0;
+  color: #0d2b4e;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.detalle-descripcion {
+  margin: 17px 0 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.detalle-disponibilidad {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  color: #15803d;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.detalle-disponibilidad svg {
+  flex-shrink: 0;
+}
+
+.detalle-disponibilidad:has(svg:first-child) {
+  flex-wrap: wrap;
+}
+
+.detalle-producto-informacion
+  .detalle-disponibilidad:has(svg:first-child) {
+  color: #15803d;
+}
+
+.detalle-separador {
+  width: 100%;
+  height: 1px;
+  margin: 24px 0;
+  background: #e2eaf3;
+}
+
+/* ========================================
+   PRECIOS
+======================================== */
+
+.detalle-precios {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+}
+
+.detalle-precio-anterior {
+  color: #8995a5;
+  font-size: 0.95rem;
+  text-decoration: line-through;
+}
+
+.detalle-ahorro {
+  color: #166534;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.detalle-precio-etiqueta {
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 0.86rem;
+}
+
+.detalle-precio-actual {
+  color: #0d2b4e;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.detalle-precio-anterior + .detalle-ahorro
+  ~ .detalle-precio-actual {
+  color: #dc2626;
+}
+
+/* ========================================
+   GARANTÍA
+======================================== */
+
+.detalle-garantia {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  width: 100%;
+  margin-top: 26px;
+  padding: 17px;
+  border: 1px solid #dbeafe;
+  border-radius: 11px;
+  background: #f4f8fd;
+}
+
+.detalle-garantia > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #2878b9;
+  font-size: 1.2rem;
+}
+
+.detalle-garantia strong {
+  color: #0d2b4e;
+  font-size: 0.92rem;
+}
+
+.detalle-garantia p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   BOTÓN AGREGAR AL CARRITO
+======================================== */
+
+.detalle-boton-agregar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 54px;
+  margin-top: 25px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background: #dc2626;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.detalle-boton-agregar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #b91c1c;
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.2);
+}
+
+.detalle-boton-agregar:disabled {
+  color: #64748b;
+  background: #e2e8f0;
+  cursor: not-allowed;
+}
+
+.detalle-nota {
+  margin: 15px 0 0;
+  color: #64748b;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+/* ========================================
+   PRODUCTO NO SELECCIONADO
+======================================== */
+
+.detalle-no-encontrado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.detalle-no-encontrado h1 {
+  color: #0d2b4e;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.detalle-no-encontrado p {
+  max-width: 480px;
+  margin: 10px 0 22px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.detalle-no-encontrado button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #0d2b4e;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 991.98px) {
+  .detalle-producto-panel {
+    gap: 26px;
+    padding: 25px;
+  }
+
+  .detalle-producto-imagen {
+    min-height: 320px;
+  }
+
+  .detalle-producto-imagen img {
+    max-height: 380px;
+  }
+}
+
+/* ========================================
+   MÓVILES
+======================================== */
+
+@media (max-width: 767.98px) {
+  .detalle-producto-pagina {
+    padding: 20px 0 40px;
+  }
+
+  .detalle-producto-panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .detalle-producto-imagen {
+    min-height: 260px;
+    max-height: 360px;
+    padding: 15px;
+  }
+
+  .detalle-producto-imagen img {
+    max-height: 320px;
+  }
+
+  .detalle-producto-informacion {
+    padding: 0;
+  }
+
+  .detalle-producto-informacion h1 {
+    font-size: 1.8rem;
+  }
+
+  .detalle-separador {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .detalle-producto-panel {
+    padding: 13px;
+  }
+
+  .detalle-producto-imagen {
+    min-height: 220px;
+  }
+
+  .detalle-producto-informacion h1 {
+    font-size: 1.55rem;
+  }
+
+  .detalle-precio-actual {
+    font-size: 1.8rem;
+  }
+
+  .detalle-boton-agregar {
+    padding: 13px 10px;
+    font-size: 0.9rem;
+  }
+}

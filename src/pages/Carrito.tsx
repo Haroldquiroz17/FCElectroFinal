@@ -1,69 +1,159 @@
+
 import { Link } from "react-router-dom";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaShoppingCart,
+  FaTrashAlt,
+} from "react-icons/fa";
 import type { ProductoCarrito } from "../App";
+import "./Carrito.css";
 
 interface Props {
   carrito: ProductoCarrito[];
   eliminarDelCarrito: (id: number) => void;
 }
 
+function formatoPrecio(precio: number) {
+  return precio.toLocaleString("es-PE", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
 function Carrito({ carrito, eliminarDelCarrito }: Props) {
-  const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+  const subtotal = carrito.reduce(
+    (total, producto) => total + producto.precio,
+    0
+  );
 
   if (carrito.length === 0) {
     return (
-      <div className="container text-center my-5">
-        <div style={{ fontSize: "80px" }}>🛒</div>
-        <h3 className="mt-3">Tu carrito está vacío</h3>
-        <p>Agrega productos para comenzar</p>
+      <main className="carrito-page">
+        <div className="carrito-container">
+          <section className="carrito-vacio">
+            <div className="carrito-vacio-icono">
+              <FaShoppingCart />
+            </div>
 
-        <Link to="/productos" className="btn btn-primary mt-3">
-          Ver productos
-        </Link>
-      </div>
+            <span className="carrito-eyebrow">FC ELECTRO</span>
+
+            <h1>Tu carrito está vacío</h1>
+
+            <p>
+              Todavía no has agregado productos. Explora nuestro catálogo
+              y encuentra el equipo que necesitas.
+            </p>
+
+            <Link to="/productos" className="carrito-btn-principal">
+              Explorar productos <FaArrowRight />
+            </Link>
+
+            <Link to="/inicio" className="carrito-volver">
+              <FaArrowLeft /> Volver al inicio
+            </Link>
+          </section>
+        </div>
+      </main>
     );
   }
 
   return (
-    <div className="container my-5">
-      <h2 className="mb-4">Tu Carrito</h2>
+    <main className="carrito-page">
+      <div className="carrito-container">
+        <Link to="/productos" className="carrito-volver">
+          <FaArrowLeft /> Seguir comprando
+        </Link>
 
-      {carrito.map((producto) => (
-        <div
-          key={producto.id}
-          className="d-flex align-items-center justify-content-between border rounded p-3 mb-3 shadow-sm"
-        >
-          <div className="d-flex align-items-center">
-            <img
-              src={producto.imagen}
-              alt={producto.nombre}
-              width="80"
-              className="me-3 rounded"
-            />
-
-            <div>
-              <h5 className="mb-1">{producto.nombre}</h5>
-              <p className="mb-0">S/ {producto.precio}</p>
-            </div>
+        <header className="carrito-encabezado">
+          <div>
+            <span className="carrito-eyebrow">FC ELECTRO</span>
+            <h1>Mi carrito</h1>
+            <p>Revisa tus productos antes de continuar.</p>
           </div>
 
-          {/* BOTÓN X */}
-          <button
-            className="btn btn-danger"
-            onClick={() => eliminarDelCarrito(producto.id)}
-          >
-            X
-          </button>
+          <span className="carrito-contador">
+            {carrito.length} {carrito.length === 1 ? "producto" : "productos"}
+          </span>
+        </header>
+
+        <div className="carrito-layout">
+          <section className="carrito-lista">
+            {carrito.map((producto, indice) => (
+              <article
+                className="carrito-producto"
+                key={`${producto.id}-${indice}`}
+              >
+                <div className="carrito-producto-imagen">
+                  <img
+                    src={producto.imagen}
+                    alt={producto.nombre}
+                    onError={(event) => {
+                      event.currentTarget.style.visibility = "hidden";
+                    }}
+                  />
+                </div>
+
+                <div className="carrito-producto-info">
+                  <span className="carrito-producto-etiqueta">
+                    Producto seleccionado
+                  </span>
+
+                  <h2>{producto.nombre}</h2>
+
+                  <p className="carrito-producto-precio">
+                    S/ {formatoPrecio(producto.precio)}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  className="carrito-eliminar"
+                  onClick={() => eliminarDelCarrito(producto.id)}
+                  aria-label={`Eliminar ${producto.nombre}`}
+                  title="Eliminar producto"
+                >
+                  <FaTrashAlt />
+                </button>
+              </article>
+            ))}
+          </section>
+
+          <aside className="carrito-resumen">
+            <h2>Resumen del pedido</h2>
+
+            <div className="carrito-resumen-linea">
+              <span>Productos</span>
+              <span>{carrito.length}</span>
+            </div>
+
+            <div className="carrito-resumen-linea">
+              <span>Subtotal</span>
+              <span>S/ {formatoPrecio(subtotal)}</span>
+            </div>
+
+            <div className="carrito-resumen-linea">
+              <span>Entrega</span>
+              <span>Por coordinar</span>
+            </div>
+
+            <div className="carrito-resumen-total">
+              <span>Total referencial</span>
+              <strong>S/ {formatoPrecio(subtotal)}</strong>
+            </div>
+
+            <Link to="/pago" className="carrito-btn-principal carrito-btn-pagar">
+              Continuar al pago <FaArrowRight />
+            </Link>
+
+            <p className="carrito-nota">
+              <FaShoppingCart /> La compra y el pago son demostrativos.
+              No se realizará ningún cobro.
+            </p>
+          </aside>
         </div>
-      ))}
-
-      <div className="text-end mt-4">
-        <h4>Total: S/ {total}</h4>
-
-        <button className="btn btn-success mt-2">
-          Finalizar compra
-        </button>
       </div>
-    </div>
+    </main>
   );
 }
 

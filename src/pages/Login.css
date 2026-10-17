@@ -1,0 +1,514 @@
+
+/* =========================================
+   FC ELECTRO - LOGIN
+   Fondo tecnológico + tarjeta moderna
+========================================= */
+
+.fc-login {
+  --login-azul: #1685f8;
+  --login-dorado: #e6bd70;
+  --login-fondo: #07111f;
+
+  position: relative;
+  isolation: isolate;
+  min-height: 85vh;
+  padding: 65px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--login-fondo);
+  color: #ffffff;
+}
+
+/* Fondo con imagen y capa oscura */
+
+.fc-login-fondo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 12, 24, 0.90) 0%,
+      rgba(4, 15, 30, 0.78) 45%,
+      rgba(4, 12, 24, 0.65) 100%
+    ),
+    url("/public/imagenes/fondo-login.jpg") center / cover no-repeat;
+
+  transform: scale(1.02);
+}
+
+/* Contenedor principal */
+
+.fc-login-contenedor {
+  width: 100%;
+  max-width: 1150px;
+  display: grid;
+  grid-template-columns: 1fr 430px;
+  align-items: center;
+  gap: 75px;
+  animation: fc-login-aparecer 0.7s ease both;
+}
+
+/* =========================================
+   PRESENTACIÓN IZQUIERDA
+========================================= */
+
+.fc-login-presentacion {
+  max-width: 540px;
+}
+
+.fc-login-etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 27px;
+  padding: 10px 15px;
+  border: 1px solid rgba(230, 189, 112, 0.35);
+  border-radius: 50px;
+  background: rgba(7, 17, 31, 0.55);
+  color: var(--login-dorado);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  backdrop-filter: blur(8px);
+}
+
+.fc-login-punto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--login-dorado);
+  box-shadow: 0 0 12px rgba(230, 189, 112, 0.8);
+}
+
+.fc-login-presentacion h1 {
+  margin: 0 0 25px;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.35);
+}
+
+.fc-login-presentacion h1 span {
+  color: var(--login-dorado);
+}
+
+.fc-login-presentacion > p {
+  max-width: 450px;
+  color: #d0dbea;
+  font-size: 16px;
+  line-height: 1.9;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Detalle informativo */
+
+.fc-login-detalle {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.fc-login-detalle-icono {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(22, 133, 248, 0.5);
+  border-radius: 14px;
+  background: rgba(7, 22, 40, 0.8);
+  color: #65b0ff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fc-login-detalle strong,
+.fc-login-detalle small {
+  display: block;
+}
+
+.fc-login-detalle strong {
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.fc-login-detalle small {
+  color: #d0dbea;
+  font-size: 12px;
+}
+
+/* =========================================
+   TARJETA DEL FORMULARIO
+========================================= */
+
+.fc-login-tarjeta {
+  width: 100%;
+  padding: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 3px solid var(--login-dorado);
+  border-radius: 22px;
+
+  background: rgba(9, 23, 40, 0.94);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(22, 133, 248, 0.10);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Logo */
+
+.fc-login-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.fc-login-logo img {
+  display: block;
+  width: 112px;
+  height: 82px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.fc-login-logo img:hover {
+  transform: scale(1.06);
+}
+
+/* Encabezado */
+
+.fc-login-encabezado {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.fc-login-encabezado > span {
+  color: var(--login-dorado);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.fc-login-encabezado h2 {
+  margin: 10px 0;
+  color: #ffffff;
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.fc-login-encabezado p {
+  margin: 0;
+  color: #b0bfd1;
+  font-size: 13px;
+}
+
+/* =========================================
+   CAMPOS DE ENTRADA
+========================================= */
+
+.fc-login-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.fc-login-campo label {
+  display: block;
+  margin-bottom: 9px;
+  color: #e3eaf4;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.fc-login-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 15px;
+  border: 1px solid #30445c;
+  border-radius: 11px;
+  background: #071522;
+  color: #9bb4d0;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.fc-login-input:focus-within {
+  border-color: var(--login-azul);
+  background: #0b1d31;
+  box-shadow: 0 0 0 4px rgba(22, 133, 248, 0.15);
+}
+
+.fc-login-input svg {
+  flex-shrink: 0;
+}
+
+.fc-login-input input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.fc-login-input input::placeholder {
+  color: #8394a9;
+}
+
+/* Mantener el color oscuro al autocompletar */
+
+.fc-login-input input:-webkit-autofill,
+.fc-login-input input:-webkit-autofill:hover,
+.fc-login-input input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  box-shadow: 0 0 0 1000px #071522 inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* =========================================
+   BOTÓN DE INGRESO
+========================================= */
+
+.fc-login-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 53px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 11px;
+
+  background: linear-gradient(110deg, #0875ed, #2799ff);
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  box-shadow: 0 9px 25px rgba(22, 133, 248, 0.25);
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.fc-login-boton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 13px 30px rgba(22, 133, 248, 0.4);
+}
+
+.fc-login-boton:active {
+  transform: scale(0.98);
+}
+
+/* =========================================
+   ENLACE DE REGISTRO
+========================================= */
+
+.fc-login-separador {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 27px 0 20px;
+}
+
+.fc-login-separador span {
+  flex: 1;
+  height: 1px;
+  background: #304158;
+}
+
+.fc-login-separador small {
+  color: #a2b1c4;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-align: center;
+}
+
+.fc-login-registro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px;
+
+  border: 1px solid rgba(230, 189, 112, 0.4);
+  border-radius: 11px;
+
+  color: var(--login-dorado);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.fc-login-registro svg:last-child {
+  margin-left: auto;
+}
+
+.fc-login-registro:hover {
+  transform: translateY(-2px);
+  border-color: var(--login-dorado);
+  background: rgba(230, 189, 112, 0.09);
+  color: #ffdaa0;
+}
+
+/* Mensaje inferior */
+
+.fc-login-nota {
+  margin: 23px 0 0;
+  color: #a2b1c4;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================================
+   ANIMACIÓN DE ENTRADA
+========================================= */
+
+@keyframes fc-login-aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+  .fc-login {
+    padding: 45px 5%;
+  }
+
+  .fc-login-contenedor {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    gap: 35px;
+  }
+
+  .fc-login-presentacion {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .fc-login-presentacion > p {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .fc-login-detalle {
+    justify-content: center;
+    margin-top: 25px;
+    text-align: left;
+  }
+
+  .fc-login-tarjeta {
+    width: 100%;
+  }
+
+  .fc-login-fondo {
+    background:
+      linear-gradient(
+        rgba(4, 12, 24, 0.78),
+        rgba(4, 12, 24, 0.86)
+      ),
+      url("/imagenes/fondo-login.jpg") center / cover no-repeat;
+  }
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 480px) {
+  .fc-login {
+    min-height: 85vh;
+    padding: 35px 16px;
+  }
+
+  .fc-login-presentacion h1 {
+    font-size: 35px;
+  }
+
+  .fc-login-presentacion > p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .fc-login-etiqueta {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .fc-login-tarjeta {
+    padding: 26px 21px;
+    border-radius: 17px;
+  }
+
+  .fc-login-logo img {
+    width: 100px;
+    height: 72px;
+  }
+
+  .fc-login-encabezado h2 {
+    font-size: 25px;
+  }
+
+  .fc-login-separador small {
+    font-size: 8px;
+  }
+
+  .fc-login-detalle {
+    margin-top: 22px;
+  }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-login-contenedor,
+  .fc-login-logo img,
+  .fc-login-input,
+  .fc-login-boton,
+  .fc-login-registro {
+    animation: none;
+    transition: none;
+  }
+}

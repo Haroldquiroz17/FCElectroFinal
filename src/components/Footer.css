@@ -1,0 +1,292 @@
+
+/* ===== FOOTER FC ELECTRO ===== */
+
+.fc-footer {
+  background: #102d4a;
+  color: #e8edf3;
+  font-family: inherit;
+  margin-top: 0;
+}
+
+.fc-footer-contenido {
+  padding: 58px 0 45px;
+  background: linear-gradient(135deg, #102d4a 0%, #0b2037 100%);
+}
+
+/* Marca */
+
+.fc-footer-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  text-decoration: none;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.fc-footer-logo {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e6c68f;
+  color: #102d4a;
+  border-radius: 13px;
+  font-size: 25px;
+  flex-shrink: 0;
+}
+
+.fc-footer-marca strong {
+  display: block;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.fc-footer-marca small {
+  display: block;
+  color: #e6c68f;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-top: 3px;
+}
+
+.fc-footer-descripcion {
+  color: #c4d0dc;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 340px;
+  margin-bottom: 23px;
+}
+
+/* Títulos */
+
+.fc-footer-titulo {
+  color: #e6c68f;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.fc-footer-titulo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 38px;
+  height: 2px;
+  border-radius: 5px;
+  background: #e6c68f;
+}
+
+/* Enlaces */
+
+.fc-footer-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fc-footer-lista li {
+  margin-bottom: 15px;
+}
+
+.fc-footer-lista a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #c4d0dc;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.fc-footer-lista a svg {
+  color: #e6c68f;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.fc-footer-lista a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Redes sociales */
+
+.fc-footer-redes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fc-footer-red {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e6c68f;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(230, 198, 143, 0.35);
+  border-radius: 12px;
+  font-size: 19px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.fc-footer-red:hover {
+  background: #e6c68f;
+  color: #102d4a;
+  border-color: #e6c68f;
+  transform: translateY(-3px);
+}
+
+/* Contacto */
+
+.fc-footer-contacto {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 19px;
+}
+
+.fc-footer-contacto-icono {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e6c68f;
+  background: rgba(230, 198, 143, 0.1);
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.fc-footer-contacto small {
+  display: block;
+  color: #9eafc0;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.fc-footer-contacto a,
+.fc-footer-contacto p {
+  color: #e8edf3;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.fc-footer-contacto a:hover {
+  color: #e6c68f;
+}
+
+/* Botón WhatsApp */
+
+.fc-footer-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 17px;
+  border: 1px solid #e6c68f;
+  border-radius: 9px;
+  color: #102d4a;
+  background: #e6c68f;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.fc-footer-boton:hover {
+  background: transparent;
+  color: #e6c68f;
+}
+
+/* Barra inferior */
+
+.fc-footer-inferior {
+  background: #091a2b;
+  border-top: 1px solid rgba(230, 198, 143, 0.2);
+  padding: 20px 0;
+}
+
+.fc-footer-inferior-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.fc-footer-inferior p {
+  color: #aebdca;
+  font-size: 12px;
+  margin: 0;
+}
+
+.fc-footer-inferior p strong {
+  color: #e6c68f;
+}
+
+.fc-footer-inferior span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #aebdca;
+  font-size: 12px;
+}
+
+.fc-footer-inferior span svg {
+  color: #e6c68f;
+}
+
+/* Adaptación a tablets y celulares */
+
+@media (max-width: 991px) {
+  .fc-footer-contenido {
+    padding: 45px 0 35px;
+  }
+
+  .fc-footer-titulo {
+    margin-bottom: 19px;
+  }
+}
+
+@media (max-width: 575px) {
+  .fc-footer-contenido {
+    padding: 38px 0 28px;
+  }
+
+  .fc-footer-marca strong {
+    font-size: 21px;
+  }
+
+  .fc-footer-descripcion {
+    font-size: 13px;
+  }
+
+  .fc-footer-inferior-contenido {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .fc-footer-inferior p,
+  .fc-footer-inferior span {
+    font-size: 11px;
+  }
+
+  .fc-footer-boton {
+    width: 100%;
+  }
+}

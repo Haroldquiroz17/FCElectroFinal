@@ -1,0 +1,478 @@
+
+.pago-page {
+  min-height: 70vh;
+  padding: 42px 20px 70px;
+  background: #f7f5f0;
+  color: #29241e;
+}
+
+.pago-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.pago-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 25px;
+  color: #6e4b2e;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.pago-volver:hover {
+  color: #b7864b;
+}
+
+.pago-encabezado {
+  margin-bottom: 28px;
+}
+
+.pago-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #a47b48;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.pago-encabezado h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+}
+
+.pago-encabezado p {
+  margin: 0;
+  color: #756d64;
+  line-height: 1.7;
+}
+
+.pago-aviso {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 28px;
+  padding: 19px 22px;
+  border: 1px solid #e7d5b8;
+  border-radius: 14px;
+  background: #fff9ee;
+  color: #73522d;
+}
+
+.pago-aviso > svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  font-size: 1.35rem;
+}
+
+.pago-aviso strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pago-aviso p {
+  margin: 0;
+  color: #766957;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.pago-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  align-items: start;
+  gap: 28px;
+}
+
+.pago-panel {
+  min-width: 0;
+  padding: 27px;
+  border: 1px solid #e9e1d6;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgb(50 35 20 / 5%);
+}
+
+.pago-panel-titulo,
+.pago-resumen-titulo {
+  margin: 0 0 22px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.pago-tarjeta {
+  position: relative;
+  max-width: 470px;
+  min-height: 255px;
+  margin: 0 auto 22px;
+  padding: 25px;
+  overflow: hidden;
+  border: 1px solid #8c6a43;
+  border-radius: 19px;
+  background: linear-gradient(135deg, #4b3525, #795735 60%, #a27b4b);
+  color: #fff8eb;
+  box-shadow: 0 12px 25px rgb(50 35 20 / 15%);
+}
+
+.pago-tarjeta::after {
+  position: absolute;
+  right: -60px;
+  bottom: -130px;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.pago-tarjeta-superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.pago-tarjeta-logo {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.pago-tarjeta-logo span {
+  color: #e6c68f;
+}
+
+.pago-tarjeta-candado {
+  color: #e6c68f;
+  font-size: 1.15rem;
+}
+
+.pago-chip {
+  position: relative;
+  width: 42px;
+  height: 32px;
+  margin-top: 23px;
+  border: 1px solid #c9b07e;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #d5c18f, #a68b53);
+}
+
+.pago-chip::before,
+.pago-chip::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #9c814a;
+  content: "";
+}
+
+.pago-chip::before {
+  left: 33%;
+}
+
+.pago-chip::after {
+  right: 33%;
+}
+
+.pago-chip span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #9c814a;
+}
+
+.pago-tarjeta-numero {
+  margin: 24px 0 20px;
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  font-weight: 650;
+  letter-spacing: 2px;
+}
+
+.pago-tarjeta-pie {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pago-tarjeta-pie > div:not(.pago-tarjeta-marca) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pago-tarjeta-etiqueta {
+  color: #e6cda5;
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+}
+
+.pago-tarjeta-pie strong {
+  font-size: 0.8rem;
+}
+
+.pago-tarjeta-marca {
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.pago-seguridad {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f7f5f0;
+  color: #6e4b2e;
+}
+
+.pago-seguridad svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+}
+
+.pago-seguridad p {
+  margin: 0;
+  color: #756d64;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.pago-resumen-titulo {
+  margin-top: 10px;
+}
+
+.pago-productos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pago-producto {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee8df;
+}
+
+.pago-producto:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.pago-producto-imagen {
+  display: flex;
+  flex: 0 0 65px;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f7f5f0;
+}
+
+.pago-producto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pago-producto-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pago-producto-info h3 {
+  margin: 0 0 6px;
+  font-size: 0.91rem;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.pago-producto-info span {
+  color: #81776c;
+  font-size: 0.78rem;
+}
+
+.pago-producto > strong {
+  color: #65472d;
+  font-size: 0.9rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pago-panel-resumen {
+  position: sticky;
+  top: 100px;
+}
+
+.pago-linea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 17px;
+  color: #756d64;
+  font-size: 0.92rem;
+}
+
+.pago-linea strong {
+  color: #29241e;
+  text-align: right;
+}
+
+.pago-total {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 25px 0;
+  padding-top: 20px;
+  border-top: 1px solid #e9e1d6;
+}
+
+.pago-total span {
+  color: #756d64;
+  font-size: 0.9rem;
+}
+
+.pago-total strong {
+  color: #65472d;
+  font-size: 1.65rem;
+  font-weight: 850;
+}
+
+.pago-boton-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border: 1px solid #65472d;
+  border-radius: 10px;
+  background: #65472d;
+  color: #fff;
+  font-weight: 750;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pago-boton-principal:hover {
+  border-color: #85613d;
+  background: #85613d;
+  color: #fff;
+}
+
+.pago-boton-confirmar {
+  width: 100%;
+}
+
+.pago-boton-secundario {
+  display: block;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #e3d6c5;
+  border-radius: 10px;
+  color: #65472d;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.pago-boton-secundario:hover {
+  background: #f7f1e8;
+}
+
+.pago-nota-final {
+  margin: 18px 0 0;
+  color: #81776c;
+  font-size: 0.79rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.pago-vacio {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 45px 25px;
+  border: 1px solid #e9e1d6;
+  border-radius: 18px;
+  background: #fff;
+  text-align: center;
+}
+
+.pago-vacio h1 {
+  margin: 0 0 15px;
+}
+
+.pago-vacio p {
+  margin-bottom: 25px;
+  color: #756d64;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .pago-layout {
+    grid-template-columns: minmax(0, 1fr) 310px;
+    gap: 18px;
+  }
+
+  .pago-panel {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pago-page {
+    padding: 30px 15px 50px;
+  }
+
+  .pago-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pago-panel-resumen {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .pago-tarjeta {
+    min-height: 230px;
+    padding: 20px;
+  }
+
+  .pago-tarjeta-numero {
+    letter-spacing: 1px;
+  }
+
+  .pago-tarjeta-pie strong {
+    font-size: 0.68rem;
+  }
+
+  .pago-tarjeta-etiqueta {
+    font-size: 0.55rem;
+  }
+
+  .pago-producto {
+    flex-wrap: wrap;
+  }
+
+  .pago-producto > strong {
+    margin-left: auto;
+  }
+}

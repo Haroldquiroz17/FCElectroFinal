@@ -1,0 +1,402 @@
+
+/* =========================================
+   FC ELECTRO - NAVBAR PRINCIPAL
+   ========================================= */
+
+.fc-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  width: 100%;
+  background: #102d4a;
+  box-shadow: 0 5px 20px rgb(5 20 35 / 18%);
+}
+
+.fc-navbar-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 84px;
+  margin: 0 auto;
+  padding: 12px 35px;
+}
+
+/* LOGO Y MARCA */
+
+.fc-navbar-marca {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.fc-navbar-marca:hover {
+  color: #fff;
+}
+
+.fc-navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 49px;
+  height: 49px;
+  overflow: hidden;
+  border: 1px solid rgb(230 198 143 / 70%);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 12%);
+}
+
+.fc-navbar-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  object-fit: contain;
+}
+
+.fc-navbar-identidad {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fc-navbar-identidad strong {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 850;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.fc-navbar-identidad small {
+  color: #e6c68f;
+  font-size: 0.61rem;
+  font-weight: 750;
+  letter-spacing: 1.1px;
+  white-space: nowrap;
+}
+
+/* CONTENIDO Y ENLACES */
+
+.fc-navbar-contenido {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.fc-navbar-enlaces {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.fc-navbar-enlaces li {
+  margin: 0;
+  padding: 0;
+}
+
+.fc-navbar-enlace {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: #e7edf4;
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.fc-navbar-enlace:hover {
+  background: rgb(255 255 255 / 7%);
+  color: #e6c68f;
+}
+
+.fc-navbar-enlace.activo {
+  background: rgb(230 198 143 / 12%);
+  color: #e6c68f;
+}
+
+.fc-navbar-enlace.activo::after {
+  position: absolute;
+  right: 15px;
+  bottom: 4px;
+  left: 15px;
+  height: 2px;
+  border-radius: 5px;
+  background: #e6c68f;
+  content: "";
+}
+
+/* ICONOS */
+
+.fc-navbar-acciones {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.fc-navbar-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 11px;
+  background: rgb(255 255 255 / 5%);
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.fc-navbar-icono:hover,
+.fc-navbar-icono.activo {
+  transform: translateY(-1px);
+  border-color: rgb(230 198 143 / 55%);
+  background: #e6c68f;
+  color: #102d4a;
+}
+
+.fc-navbar-cuenta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid #e6c68f;
+  border-radius: 10px;
+  background: #e6c68f;
+  color: #102d4a;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.fc-navbar-cuenta:hover {
+  background: #f2d9ac;
+  color: #102d4a;
+}
+
+/* BOTÓN DEL MENÚ MÓVIL */
+
+.fc-navbar-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 7%);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.fc-navbar-menu-toggle:hover {
+  background: rgb(255 255 255 / 14%);
+}
+
+/* DETALLE INFERIOR */
+
+.fc-navbar-linea {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #102d4a 0%,
+    #d8b779 50%,
+    #102d4a 100%
+  );
+}
+
+/* TABLETS Y LAPTOPS PEQUEÑAS */
+
+@media (max-width: 1100px) {
+  .fc-navbar-contenedor {
+    gap: 17px;
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .fc-navbar-contenido {
+    gap: 12px;
+  }
+
+  .fc-navbar-enlace {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 0.88rem;
+  }
+
+  .fc-navbar-acciones {
+    gap: 6px;
+  }
+
+  .fc-navbar-icono {
+    width: 38px;
+    height: 38px;
+  }
+
+  .fc-navbar-cuenta {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 767.98px) {
+  .fc-navbar-contenedor {
+    position: relative;
+    min-height: 73px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 11px 17px;
+  }
+
+  .fc-navbar-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .fc-navbar-identidad strong {
+    font-size: 1.1rem;
+  }
+
+  .fc-navbar-identidad small {
+    font-size: 0.55rem;
+    letter-spacing: 0.8px;
+  }
+
+  .fc-navbar-menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .fc-navbar-contenido {
+    display: none;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 14px 0 8px;
+    border-top: 1px solid rgb(255 255 255 / 12%);
+  }
+
+  .fc-navbar-contenido.fc-navbar-contenido-abierto {
+    display: flex;
+  }
+
+  .fc-navbar-enlaces {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    margin: 0;
+  }
+
+  .fc-navbar-enlaces li {
+    width: 100%;
+  }
+
+  .fc-navbar-enlace {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 14px;
+  }
+
+  .fc-navbar-enlace.activo::after {
+    top: 10px;
+    right: auto;
+    bottom: 10px;
+    left: 0;
+    width: 3px;
+    height: auto;
+  }
+
+  .fc-navbar-acciones {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .fc-navbar-icono {
+    width: 100%;
+    height: 43px;
+  }
+
+  .fc-navbar-cuenta {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+/* CELULARES MUY PEQUEÑOS */
+
+@media (max-width: 360px) {
+  .fc-navbar-contenedor {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .fc-navbar-identidad strong {
+    font-size: 1rem;
+  }
+
+  .fc-navbar-identidad small {
+    font-size: 0.48rem;
+  }
+
+  .fc-navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* RESPETA LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-navbar *,
+  .fc-navbar *::before,
+  .fc-navbar *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
